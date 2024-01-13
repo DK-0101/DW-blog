@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "compile:sass": "sass input.scss output.css"
+  },
+  "devDependencies": {
+    "sass": "^1.69.7"
+  },
+  "name": "DW-blog-main",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "jquery": "^3.7.1"
+  }
+}

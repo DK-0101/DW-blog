@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+  #carouselExampleCaptions {
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+}
+
+.carousel-inner .carousel-item img {
+    width: 80%;
+    border-radius: 0.5rem;
+    height: 500px;
+}
+  
+  .container {
+    margin-bottom: 1rem;
+    margin-top: 20px; /* Margem superior para dar algum espaçamento */
+  }
+
+  .container p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #1d3d5f;
+  }
+
+  .doctors {
+    border-radius: 0.5rem;
+    background-color: #09111a36;
+  }
+  
+  .card-group {
+    margin-top: 10rem;
+    margin-bottom: 20px; /* Espaçamento entre cada grupo de cards */
+  }
+
+  .card-group img {
+    border-radius: 0.5rem;
+    height: 600px;
+  }
+  
+  .card {
+    height: 100%; /* Garante que os cards ocupem toda a altura disponível */
+  }
+
+  #firstContent h2 {
+    margin-bottom: 2rem;
+    color: #007bff;
+  }
+  
+  /* Estilos para ajustar a aparência conforme necessário */
+  .card-title {
+    color: #007bff; /* Cor do título do card, ajuste conforme necessário */
+  }
+  
+  .card-body {
+    background-color: #ffffff; /* Cor de fundo do corpo do card, ajuste conforme necessário */
+  }
+  
+  /* Estilos para garantir que a imagem do card mantenha a proporção original e não fique muito grande */
+  .card-img-top {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 1199px) {
+    .card-group {
+        margin-top: 10rem;
+    }
+    .card-group img {
+        height: 400px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .card-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; /* Distribui uniformemente os cards na linha */
+    }
+  
+    .col-md-6 {
+      width: 48%; /* Ajusta a largura para que haja algum espaçamento entre os cards em telas maiores */
+      margin-bottom: 20px; /* Adiciona espaçamento entre as fileiras */
+    }
+  }
+  
+
+ 
