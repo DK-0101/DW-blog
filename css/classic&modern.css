@@ -33,13 +33,15 @@
   }
   
   .card-group {
+    padding: 30px;
+    height: 600px;
     margin-top: 10rem;
     margin-bottom: 20px; /* Espaçamento entre cada grupo de cards */
   }
 
   .card-group img {
     border-radius: 0.5rem;
-    height: 600px;
+    height: 500px;
   }
   
   .card {
