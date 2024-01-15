@@ -37,6 +37,9 @@ nav .navbar-toggler
 	font-size: 20px;
 }
 
+#navbar form {
+	margin-left: 3rem;
+}
 
 #contato {
     margin-bottom: 20px;
@@ -199,6 +202,11 @@ nav .navbar-toggler
 	}
 	.navbar-dark .navbar-nav .nav-link {
 		padding: 15px 0px;
+	}
+
+	#navbar form {
+		margin-left: 3rem;
+		width: 50%;
 	}
 
 }
