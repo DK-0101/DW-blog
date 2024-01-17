@@ -19,22 +19,20 @@ nav .navbar-toggler
 	filter: invert(1) hue-rotate(180deg);
 }
 
-#navbar button {
-	margin-right: 55px;
-}
-
 #navbar h2 {
 	font-weight: 600;
-	margin-left: 55px;
 	font-size: 30px;
 	color: #3a8bcd;
 	letter-spacing: 3px;
 }
 
 #navbar a {
-	margin-left: 55px;
 	color: #3a8bcd;
 	font-size: 20px;
+}
+
+#navbar a:hover {
+	color: #3a8bcd6c;
 }
 
 #navbar form {
@@ -157,18 +155,6 @@ nav .navbar-toggler
 .sub-footer a {
 	color: #3a8bcd;
 	text-decoration: none;
-}
-
-/* Contact Styles */
-#contact {
-	padding: 100px;
-	background-color: #3a8bcd50;
-	transition: 1s ease;
-}
-
-#contact h5 {
-	color: #3a8bcd;
-	font-weight: 600;
 }
 
 

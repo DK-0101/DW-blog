@@ -1,39 +1,53 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('.search-box');
-    const input = form.querySelector('input[type="search"]');
-    const resultsContainer = document.querySelector('.results');
-    const resultsCounter = document.querySelector('header p');
+$(document).ready(function () {
+    const form = $('.search-box');
+    const input = form.find('input[type="search"]');
+    const resultsContainer = $('.results');
+    const resultsCounter = $('header p');
+    const eraserResults = $('#eraser');
 
-    form.addEventListener('submit', function (event) {
+    form.submit(function (event) {
         event.preventDefault();
-        const searchTerm = input.value;
-        if(searchTerm) {
+        const searchTerm = input.val();
+        if (searchTerm) {
             searchWikipedia(searchTerm);
         }
+    });
+
+    eraserResults.click(function () {
+        clearResults();
     });
 
     function searchWikipedia(searchTerm) {
         const url = `https://pt.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=50&srsearch=${encodeURIComponent(searchTerm)}`;
 
-        fetch(url).then(response => response.json()).then
-        (data => {
-            displayResults(data.query.search);
-        }).catch(error => alert('Error : ' + error));
+        $.ajax({
+            url: url,
+            method: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                displayResults(data.query.search);
+            },
+            error: function (error) {
+                alert('Error : ' + error);
+            }
+        });
     }
 
     function displayResults(results) {
-        resultsContainer.innerHTML = '';
-        resultsCounter.textContent = `Results Count : ${results.length}`;
-        results.forEach(result => {
-            const resultElement = document.createElement('div');
-            resultElement.classList = 'result';
-            resultElement.innerHTML = `
-            
-            <h3>${result.title}</h3>
-            <p>${result.snippet}</p>
-            <a href="https://en.wikipedia.org/?curid=${result.pageid} class="readMore1" target="_blank">Read More</a>
-            `;
-            resultsContainer.appendChild(resultElement);
+        resultsContainer.html('');
+        resultsCounter.text(`Resultados : ${results.length}`);
+        $.each(results, function (index, result) {
+            const resultElement = $('<div>').addClass('result').html(`
+                <h3>${result.title}</h3>
+                <p>${result.snippet}</p>
+                <a href="https://en.wikipedia.org/?curid=${result.pageid}" target="_blank">Ler mais</a>
+            `);
+            resultsContainer.append(resultElement);
         });
+    }
+
+    function clearResults() {
+        resultsContainer.html('');
+        resultsCounter.text('Resultados : 0');
     }
 });
